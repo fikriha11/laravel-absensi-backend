@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Database\Seeders\CompanySeeder;
 use Illuminate\Support\Facades\Hash;
 use Database\Seeders\AttendanceSeeder;
+use Database\Seeders\PermissionSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,6 +21,10 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('haikal110599'),
         ]);
 
-        $this->call([AttendanceSeeder::class,CompanySeeder::class]);
+        $this->call([
+            AttendanceSeeder::class,
+            CompanySeeder::class,
+            PermissionSeeder::class
+        ]);
     }
 }
